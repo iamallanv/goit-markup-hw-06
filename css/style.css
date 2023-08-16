@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;800;900&display=swap");
 
 :root {
   --primary-text-color: #434455;
@@ -19,7 +19,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   background-color: var(--primary-white-color);
   color: var(--primary-text-color);
   letter-spacing: 0.03em;
@@ -150,7 +150,7 @@ img {
 }
 
 /* Underline */
-.current {
+.page {
   position: relative;
   color: var(--accent-color);
 }
@@ -165,6 +165,24 @@ img {
   border-radius: 2px;
   border: 2px solid var(--accent-color);
   background-color: var(--accent-color);
+}
+
+.page::after {
+  content: "";
+  border-radius: 2px;
+  height: 4px;
+  width: 0;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  transition: width 250ms ease-in-out, background-color 250ms ease-in-out;
+}
+
+.page:hover::after,
+.page:focus::after {
+  border: 2px solid var(--ocean);
+  background-color: var(--ocean);
+  width: 100%;
 }
 
 /* Checked */
@@ -385,7 +403,7 @@ img {
 .bg-team {
   background-color: var(--background-grey);
 }
-
+.project-card
 /* Checked */
 .team .name,
 .team .position {
@@ -405,11 +423,12 @@ img {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.substrate:hover,
+/*.substrate:hover,
 .substrate:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+*/
 
 /* Checked */
 .team .name {
@@ -465,7 +484,7 @@ img {
 }
 
 .social-footer {
-  padding-top: 10px;
+  padding-top: 16px;
   display: flex;
   justify-content: flex-start;
   gap: 15px;
@@ -550,6 +569,13 @@ img {
   flex-basis: calc(100% / 3 - 30px);
   margin-left: 30px;
   margin-top: 30px;
+  transition: box-shadow 250ms ease-in-out;
+}
+
+.project-card:hover {
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 /* Checked */
@@ -656,8 +682,8 @@ img {
 
 .modal {
   /* this is for modal-title */
-  padding: 40px;
-
+  /* padding: 40px; */
+  padding: 72px 24px 24px 24px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -673,9 +699,8 @@ img {
 .modal-title {
   color: var(--primary-black-color);
   text-align: center;
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 30px;
+  font-weight: 500;
+  margin-bottom: 34px;
 }
 
 .backdrop.is-hidden .modal {
@@ -684,14 +709,14 @@ img {
 
 .modal-close {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 24px;
+  right: 24px;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
 
   background-color: var(--cornflower);
   color: var(--primary-black-color);
@@ -739,8 +764,9 @@ img {
 .form-textarea {
   display: block;
   width: 100%;
+  font-size: 14px;
   margin-bottom: 29px;
-  padding: 11px 16px 11px 40px;
+  padding: 11px 16px 11px 38px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 
@@ -802,9 +828,10 @@ img {
 /* Checkbox inside modal */
 .form-agreement {
   display: flex;
-  justify-content: center;
   align-items: center;
   margin-bottom: 34px;
+  font-size: 12px;
+  color: var(--lightslate);
 }
 
 .visually-hidden {
@@ -822,7 +849,7 @@ img {
 
 .form-checkbox-icon {
   fill: none;
-  border: 2px solid var(--primary-text-color);
+  border: 1px solid var(--lightslate);
   border-radius: 2px;
   margin-right: 7px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -843,9 +870,6 @@ img {
 .footer-container form {
   display: flex;
   align-items: flex-end;
-
-  margin-top: 12px;
-  margin-left: 123px;
 }
 
 .footer-form {
@@ -876,6 +900,10 @@ img {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.footer-form-button:hover {
+  background-color: var(--ocean);
+}
+
 .svg-subscribe {
   width: 24px;
   height: 24px;
@@ -892,6 +920,7 @@ img {
 .footer-form-input {
   color: var(--primary-white-color);
   width: 264px;
+  outline: none;
   height: 40px;
   padding: 8px 16px;
   display: flex;
